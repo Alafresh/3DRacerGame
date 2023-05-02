@@ -5,6 +5,8 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
+    bool movingLeft = true;
+    bool firstInput = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +16,40 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if( GameManager.instance.gameStarted)
+        {
+            Move();
+            CheckInput();
+        }
     }
 
     void Move()
     {
         transform.position += transform.forward * Time.deltaTime * speed;
+    }
+    void CheckInput()
+    {
+        if(firstInput)
+        {
+            firstInput = false;
+            return;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            ChangeDirection();
+        }
+    }
+    void ChangeDirection()
+    {
+        if (movingLeft)
+        {
+            movingLeft = false;
+            transform.rotation = Quaternion.Euler(0, 90, 0);
+        }
+        else
+        {
+            movingLeft = true;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 }
