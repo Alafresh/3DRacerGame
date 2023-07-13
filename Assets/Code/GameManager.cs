@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public bool gameStarted;
+    public GameObject platformSpawner;
 
     private void Awake() {
         if (instance == null)
@@ -34,9 +35,10 @@ public class GameManager : MonoBehaviour
     public void GameStart()
     {
         gameStarted = true;
+        platformSpawner.SetActive(true);
     }
     public void GameOver()
     {
-
+        platformSpawner.SetActive(false);
     }
 }

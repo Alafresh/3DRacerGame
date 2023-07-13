@@ -430,37 +430,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1240357944}
   smoothSpeed: 5
---- !u!1 &1240233502 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3686697330112552263, guid: fa3ea94421938724e8c55128db70a033, type: 3}
-  m_PrefabInstance: {fileID: 3686697329149160281}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1240357939
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240233502}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.429984, y: 1.4931582, z: 5.6486835}
-  m_Center: {x: 0, y: 0.74700755, z: 0.13933945}
---- !u!114 &1240357940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240233502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ebca3976a84def4cad69c78aa7f5f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!4 &1240357944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3686697330112205321, guid: fa3ea94421938724e8c55128db70a033, type: 3}
@@ -482,7 +451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1679581547
 Transform:
   m_ObjectHideFlags: 0
@@ -701,6 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStarted: 0
+  platformSpawner: {fileID: 1679581546}
 --- !u!4 &2129880775
 Transform:
   m_ObjectHideFlags: 0
@@ -790,18 +760,6 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3686697330112205321, guid: fa3ea94421938724e8c55128db70a033, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686697330112205321, guid: fa3ea94421938724e8c55128db70a033, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686697330112205321, guid: fa3ea94421938724e8c55128db70a033, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686697330112205321, guid: fa3ea94421938724e8c55128db70a033, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -847,7 +805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686697330112690027, guid: fa3ea94421938724e8c55128db70a033, type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa3ea94421938724e8c55128db70a033, type: 3}
