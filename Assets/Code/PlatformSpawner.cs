@@ -16,12 +16,6 @@ public class PlatformSpawner : MonoBehaviour
         StartCoroutine(SpawnPlatforms());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
     IEnumerator SpawnPlatforms()
     {
         while(!stop)

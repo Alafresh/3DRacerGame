@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729ae11e2043b5d42bc93d9af1ab7d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformPrefab: {fileID: 2130691579}
+  platformPrefab: {fileID: 2547448634039794627, guid: 2fb25ce2843094d48a41e834b107f7b6, type: 3}
   lastPlatform: {fileID: 1783987674}
 --- !u!4 &1783987674 stripped
 Transform:
@@ -686,11 +686,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2130691579 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2547448634039794627, guid: 2fb25ce2843094d48a41e834b107f7b6, type: 3}
-  m_PrefabInstance: {fileID: 2547448633862338244}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2547448633862338244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -755,6 +750,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1240357939, guid: fa3ea94421938724e8c55128db70a033, type: 3}
+      propertyPath: m_Size.y
+      value: 1.4706192
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240357939, guid: fa3ea94421938724e8c55128db70a033, type: 3}
+      propertyPath: m_Center.y
+      value: 0.7582775
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240357939, guid: fa3ea94421938724e8c55128db70a033, type: 3}
+      propertyPath: m_Center.z
+      value: 0.13933936
+      objectReference: {fileID: 0}
     - target: {fileID: 3686697330112205321, guid: fa3ea94421938724e8c55128db70a033, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -765,7 +772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686697330112205321, guid: fa3ea94421938724e8c55128db70a033, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 0.506
       objectReference: {fileID: 0}
     - target: {fileID: 3686697330112205321, guid: fa3ea94421938724e8c55128db70a033, type: 3}
       propertyPath: m_LocalPosition.z
@@ -802,6 +809,10 @@ PrefabInstance:
     - target: {fileID: 3686697330112552263, guid: fa3ea94421938724e8c55128db70a033, type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686697330112552263, guid: fa3ea94421938724e8c55128db70a033, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3686697330112690027, guid: fa3ea94421938724e8c55128db70a033, type: 3}
       propertyPath: m_IsKinematic

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public bool gameStarted;
     public GameObject platformSpawner;
+
+    int score = 0;
 
     private void Awake() {
         if (instance == null)
@@ -36,9 +39,27 @@ public class GameManager : MonoBehaviour
     {
         gameStarted = true;
         platformSpawner.SetActive(true);
+
+        StartCoroutine(UpdateScore());
     }
     public void GameOver()
     {
         platformSpawner.SetActive(false);
+        Invoke("ReloadLevel", 1f);
+    }
+
+    void ReloadLevel()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    IEnumerator  UpdateScore()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(1f);
+            score++;
+            print(score);
+        }
     }
 }
