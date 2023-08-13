@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +10,7 @@ public class GameManager : MonoBehaviour
     public bool gameStarted;
     public GameObject platformSpawner;
     public GameObject gamePlayUI;
+    public GameObject menuUI;
     public TextMeshProUGUI scoreText;
 
     int score = 0;
@@ -21,12 +21,6 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -43,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         gameStarted = true;
         platformSpawner.SetActive(true);
+        menuUI.SetActive(false);
         gamePlayUI.SetActive(true);
         StartCoroutine(UpdateScore());
     }

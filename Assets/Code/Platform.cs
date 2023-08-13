@@ -14,6 +14,6 @@ public class Platform : MonoBehaviour
     void Fall()
     {
         GetComponent<Rigidbody>().isKinematic = false;
-        DestroyObject(gameObject, 1f);
+        Destroy(gameObject, 1f);
     }
 }
