@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public bool gameStarted;
     public GameObject platformSpawner;
+    public GameObject gamePlayUI;
+    public TextMeshProUGUI scoreText;
 
     int score = 0;
 
@@ -39,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         gameStarted = true;
         platformSpawner.SetActive(true);
-
+        gamePlayUI.SetActive(true);
         StartCoroutine(UpdateScore());
     }
     public void GameOver()
@@ -59,7 +63,7 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             score++;
-            print(score);
+            scoreText.text = score.ToString();
         }
     }
 }
