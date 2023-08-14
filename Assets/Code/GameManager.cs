@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,15 +12,23 @@ public class GameManager : MonoBehaviour
     public GameObject platformSpawner;
     public GameObject gamePlayUI;
     public GameObject menuUI;
+    public TextMeshProUGUI highScore;
     public TextMeshProUGUI scoreText;
 
     int score = 0;
+    int highScoreInt = 0;
 
     private void Awake() {
         if (instance == null)
         {
             instance = this;
         }
+    }
+    private void Start()
+    {
+        highScoreInt = PlayerPrefs.GetInt("HighScore");
+        highScore.text = "Best Score : " + highScoreInt;
+
     }
     // Update is called once per frame
     void Update()
@@ -39,11 +48,13 @@ public class GameManager : MonoBehaviour
         platformSpawner.SetActive(true);
         menuUI.SetActive(false);
         gamePlayUI.SetActive(true);
-        StartCoroutine(UpdateScore());
+        StartCoroutine("UpdateScore");
     }
     public void GameOver()
     {
         platformSpawner.SetActive(false);
+        StopCoroutine("UpdateScore");
+        SaveHighScore();
         Invoke("ReloadLevel", 1f);
     }
 
@@ -59,6 +70,21 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             score++;
             scoreText.text = score.ToString();
+        }
+    }
+
+    void SaveHighScore()
+    {
+        if(PlayerPrefs.HasKey("HighScore"))
+        {
+            if(score > PlayerPrefs.GetInt("HighScore"))
+            {
+                PlayerPrefs.SetInt("HighScore", score);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("HighScore", score);
         }
     }
 }
