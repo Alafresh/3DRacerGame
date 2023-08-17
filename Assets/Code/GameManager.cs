@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI highScore;
     public TextMeshProUGUI scoreText;
 
+    AudioSource audioS;
+    public AudioClip[] gameMusics;
+
     int score = 0;
     int highScoreInt = 0;
 
@@ -23,12 +26,14 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+        audioS = GetComponent<AudioSource>();
     }
     private void Start()
     {
         highScoreInt = PlayerPrefs.GetInt("HighScore");
         highScore.text = "Best Score : " + highScoreInt;
 
+        
     }
     // Update is called once per frame
     void Update()
@@ -48,6 +53,10 @@ public class GameManager : MonoBehaviour
         platformSpawner.SetActive(true);
         menuUI.SetActive(false);
         gamePlayUI.SetActive(true);
+
+        audioS.clip = gameMusics[1];
+        audioS.Play();
+
         StartCoroutine("UpdateScore");
     }
     public void GameOver()
