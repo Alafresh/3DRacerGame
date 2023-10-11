@@ -7,12 +7,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private float speed = 10f;
     bool movingLeft = true;
     bool firstInput = true;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
