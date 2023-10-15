@@ -51,4 +51,13 @@ public class CarController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Donut")
+        {
+            GameManager.instance.IncrementScore();
+            other.gameObject.SetActive(false);
+        }
+    }
 }

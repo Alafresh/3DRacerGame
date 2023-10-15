@@ -13,7 +13,8 @@ public class Platform : MonoBehaviour
         donutPos.y += 1f;
         if (randDonut < 1)
         {
-            Instantiate(donut, donutPos, donut.transform.rotation);
+            GameObject donutInstance = Instantiate(donut, donutPos, donut.transform.rotation);
+            donutInstance.transform.SetParent(gameObject.transform);
         }
         // 1 2 3 4 Dont spawn the donut
     }
