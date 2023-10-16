@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
+    [SerializeField] GameObject pickUpEffect;
     bool movingLeft = true;
     bool firstInput = true;
     
@@ -13,8 +14,11 @@ public class CarController : MonoBehaviour
     {
         if( GameManager.instance.gameStarted)
         {
-            Move();
-            CheckInput();
+            if (!GameManager.instance.gameIsPaused)
+            {
+                Move();
+                CheckInput();
+            }
         }
         if (transform.position.y < -2)
         {
@@ -49,6 +53,17 @@ public class CarController : MonoBehaviour
         {
             movingLeft = true;
             transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Donut")
+        {
+            GameManager.instance.IncrementScore();
+
+            Instantiate(pickUpEffect, other.transform.position, pickUpEffect.transform.rotation);
+            other.gameObject.SetActive(false);
         }
     }
 }
