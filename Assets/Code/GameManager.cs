@@ -14,12 +14,15 @@ public class GameManager : MonoBehaviour
     public GameObject menuUI;
     public TextMeshProUGUI highScore;
     public TextMeshProUGUI scoreText;
+    [SerializeField] GameObject pauseMenu;
 
     AudioSource audioS;
     public AudioClip[] gameMusics;
 
     int score = 0;
     int highScoreInt = 0;
+
+    public bool gameIsPaused = false;
 
     private void Awake() {
         if (instance == null)
@@ -45,8 +48,31 @@ public class GameManager : MonoBehaviour
                 GameStart();
             }
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        gameIsPaused = false;
     }
 
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        gameIsPaused = true;
+    }
     public void GameStart()
     {
         gameStarted = true;
@@ -73,10 +99,15 @@ public class GameManager : MonoBehaviour
     }
 
     public void LoadGame()
-    {
+    {   
         SceneManager.LoadScene("Game");
+        Time.timeScale = 1f;
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
     IEnumerator  UpdateScore()
     {
         while(true)

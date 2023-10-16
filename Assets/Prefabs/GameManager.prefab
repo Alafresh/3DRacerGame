@@ -51,6 +51,7 @@ MonoBehaviour:
   menuUI: {fileID: 0}
   highScore: {fileID: 0}
   scoreText: {fileID: 0}
+  pauseMenu: {fileID: 3095738152108100303, guid: 74faab14fd23dcd48bd612dc6a3c6848, type: 3}
   gameMusics:
   - {fileID: 8300000, guid: ee74d51787d08f74e8f0a5e653d31632, type: 3}
   - {fileID: 8300000, guid: 05fad52eabbb25940aeb15203312f379, type: 3}

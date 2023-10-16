@@ -14,8 +14,11 @@ public class CarController : MonoBehaviour
     {
         if( GameManager.instance.gameStarted)
         {
-            Move();
-            CheckInput();
+            if (!GameManager.instance.gameIsPaused)
+            {
+                Move();
+                CheckInput();
+            }
         }
         if (transform.position.y < -2)
         {
