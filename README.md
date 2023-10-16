@@ -40,4 +40,4 @@ Puedes jugar al juego de plataformas en dos plataformas diferentes:
    [Jugar en el navegador web](https://a-la-fresh.itch.io/zig-zag-runner)
 
 2. **Versión Android**: Si prefieres jugar en tu dispositivo Android, puedes descargar la versión móvil del juego en este enlace de drive:
-   [Descargar para movil]([enlace_de_la_tienda_de_google_play](https://drive.google.com/file/d/1K2EBxF6H1spZ2benM9YRgF_uvfofWGKt/view?usp=sharing)https://drive.google.com/file/d/1K2EBxF6H1spZ2benM9YRgF_uvfofWGKt/view?usp=sharing)
+   [Descargar para movil]([enlace_de_la_tienda_de_google_play](https://drive.google.com/file/d/1K2EBxF6H1spZ2benM9YRgF_uvfofWGKt/view?usp=sharing)https://drive.google.com/file/d/1K2EBxF6H1spZ2benM9YRgF_uvfofWGKt/view?usp=sharing](https://drive.google.com/file/d/1K2EBxF6H1spZ2benM9YRgF_uvfofWGKt/view?usp=sharing)https://drive.google.com/file/d/1K2EBxF6H1spZ2benM9YRgF_uvfofWGKt/view?usp=sharing)
