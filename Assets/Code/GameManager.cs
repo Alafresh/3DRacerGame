@@ -69,6 +69,11 @@ public class GameManager : MonoBehaviour
 
     void ReloadLevel()
     {
+        SceneManager.LoadScene("GameOver");
+    }
+
+    public void LoadGame()
+    {
         SceneManager.LoadScene("Game");
     }
 

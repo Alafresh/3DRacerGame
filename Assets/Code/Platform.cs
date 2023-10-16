@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    [SerializeField] GameObject donut;
+    [SerializeField] DonutFactory donutFactory;
+    [SerializeField] PlatformPool platformPool;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +15,8 @@ public class Platform : MonoBehaviour
         donutPos.y += 1f;
         if (randDonut < 1)
         {
-            GameObject donutInstance = Instantiate(donut, donutPos, donut.transform.rotation);
+            GameObject donutInstance = donutFactory.CreateDonut();
+            donutInstance.transform.position = donutPos;
             donutInstance.transform.SetParent(gameObject.transform);
         }
         // 1 2 3 4 Dont spawn the donut
@@ -28,6 +31,11 @@ public class Platform : MonoBehaviour
     void Fall()
     {
         GetComponent<Rigidbody>().isKinematic = false;
-        Destroy(gameObject, 1f);
+        StartCoroutine(Return());
+    }
+    IEnumerator Return()
+    {
+        yield return new WaitForSeconds(1f);
+        platformPool.ReturnPlatform(transform.gameObject);
     }
 }

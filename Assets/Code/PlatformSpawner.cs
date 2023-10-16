@@ -3,12 +3,13 @@ using System.Collections;
 
 public class PlatformSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject platformPrefab;
+    [SerializeField] PlatformPool platformPool;
     [SerializeField] Transform lastPlatform;
     Vector3 lastPosition;
     Vector3 newPos;
 
     bool stop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,11 @@ public class PlatformSpawner : MonoBehaviour
         while(!stop)
         {
             GeneratePosition();
-            Instantiate(platformPrefab, newPos, Quaternion.identity);
+            GameObject platform = platformPool.GetPlatform();
+            platform.transform.position = newPos;
+            //Instantiate(platformPrefab, newPos, Quaternion.identity);
             lastPosition = newPos;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.25f);
         }
     }
 
