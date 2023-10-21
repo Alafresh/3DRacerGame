@@ -95,6 +95,7 @@ public class CarControllerTest
         // comprobamos que la rotacion haya cambiado
         Assert.AreNotEqual(initialRotation, carGameObject.transform.rotation);
     }
+}
 ```
 ## Ejecutables
 
