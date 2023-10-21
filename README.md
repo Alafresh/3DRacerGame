@@ -32,6 +32,70 @@ El juego es un juego de plataformas en el que el jugador controla un personaje. 
 
 - **Web y Android**: El juego está disponible en dos versiones ejecutables: una para web y otra para Android. Esto proporciona flexibilidad a los jugadores para elegir cómo quieren jugar.
 
+## Pruebas Unitarias en Unity
+Par configurar el ambiente de pruebas dentro de unity descargamos el paquete Test Framework desde el `Package Manager` en el siguiente paso abrimos la pestana de `Test Runner` desde `Window/General/TestRunner`  una vez abierta la pestana `Test Runner` le damos a la opcion Create `EditMode Test Assembly Folder` esta nos creara la carpeta `Test` dentro del proyecto con su debido Assembly, dentro del `Inspector` y con el archivo `Tests` seleccionado agregamos nuestro `CodeAssembly` que tiene los codigos que testearemos en esta carpeta ![Referencia](Assets/Sprites/TestUnity.png)
+
+### Ejecutar Pruebas
+Para ejecutar tus pruebas unitarias desde el Test Runner:
+1. Ve a Window > General > Test Runner en el Editor de Unity.
+2. En la ventana del Test Runner, deberías ver tus pruebas listadas.
+3. Haz clic en el botón "Run All" para ejecutar todas las pruebas.
+4. Observa la salida de la prueba para ver si todas las pruebas pasan o fallan.
+
+### Ejemplo Codigo Usado 
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
+using UnityEngine;
+using UnityEngine.TestTools;
+
+public class CarControllerTest
+{
+    private GameObject carGameObject;
+    private CarController carController;
+
+    [SetUp]
+    public void SetUp()
+    {
+        carGameObject = new GameObject("DodgeCharger");
+        carController = carGameObject.AddComponent<CarController>();
+    }
+
+    [TearDown]
+    public void TearDown()
+    {
+        // Destroy may not be called from edit mode!
+        Object.DestroyImmediate(carGameObject);
+    }
+
+    // A Test behaves as an ordinary method
+    [Test]
+    public void CarControllerTest_Move_ShouldChangePosition()
+    {
+        // guardamos posicion inicial
+        Vector3 initialPosition = carGameObject.transform.position;
+
+        // llamamos el metodo Move
+        carController.Move();
+
+        // comprobamos que la posicion ha cambiado
+        Assert.AreNotEqual(initialPosition, carGameObject.transform.position);
+    }
+
+    [Test]
+    public void CarControllerTest_ChangeDirection_ShouldChangeRotation()
+    {
+        // Guardar rotacion incial
+        Quaternion initialRotation = carGameObject.transform.rotation;
+
+        // llama el metodo ChangeDIrection
+        carController.ChangeDirection();
+
+        // comprobamos que la rotacion haya cambiado
+        Assert.AreNotEqual(initialRotation, carGameObject.transform.rotation);
+    }
+```
 ## Ejecutables
 
 Puedes jugar al juego de plataformas en dos plataformas diferentes:
