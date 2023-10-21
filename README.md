@@ -99,7 +99,7 @@ public class CarControllerTest
 ```
 ## Ejecutables
 
-Puedes jugar al juego de plataformas en dos plataformas diferentes:
+Puedes jugar en dos plataformas diferentes:
 
 1. **Versión Web**: Para jugar en tu navegador web, haz clic en el siguiente enlace:
    [Jugar en el navegador web](https://a-la-fresh.itch.io/zig-zag-runner)
