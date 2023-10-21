@@ -26,7 +26,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    void Move()
+    public void Move()
     {
         transform.position += transform.forward * Time.deltaTime * speed;
     }
@@ -42,7 +42,7 @@ public class CarController : MonoBehaviour
             ChangeDirection();
         }
     }
-    void ChangeDirection()
+    public void ChangeDirection()
     {
         if (movingLeft)
         {
