@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    // Variables publicas
+
     public static GameManager instance;
     public bool gameStarted;
     public GameObject platformSpawner;

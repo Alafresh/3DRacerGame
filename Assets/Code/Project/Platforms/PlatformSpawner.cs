@@ -31,8 +31,7 @@ public class PlatformSpawner : MonoBehaviour
     }
 
     void GeneratePosition()
-    {
-        
+    {        
         newPos = lastPosition;
 
         int rand = Random.Range(0, 2);
