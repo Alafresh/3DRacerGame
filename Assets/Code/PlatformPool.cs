@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class PlatformPool : MonoBehaviour
 {
     [SerializeField] GameObject platformPrefab;
-    [SerializeField] int poolSize = 10;
+    [SerializeField] int poolSize = 15;
 
     Queue<GameObject> platformPool = new Queue<GameObject>();
 
@@ -26,6 +26,7 @@ public class PlatformPool : MonoBehaviour
             platform.SetActive(true);
             if(platform.transform.childCount > 0)
             {
+                platform.transform.rotation = Quaternion.Euler(0, 0, 0);
                 platform.transform.GetChild(0).gameObject.SetActive(true);
             }
             return platform;
@@ -42,5 +43,6 @@ public class PlatformPool : MonoBehaviour
         platform.SetActive(false);
         platformPool.Enqueue(platform);
         platform.GetComponent<Rigidbody>().isKinematic = true;
+        platform.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

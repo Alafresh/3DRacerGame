@@ -41,13 +41,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameStarted)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                GameStart();
-            }
-        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gameIsPaused)
