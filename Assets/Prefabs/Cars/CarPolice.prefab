@@ -683,7 +683,6 @@ GameObject:
   - component: {fileID: 6732671423508911742}
   - component: {fileID: 3521896669210700828}
   - component: {fileID: 4698955344742777451}
-  - component: {fileID: 3658604329588754317}
   m_Layer: 0
   m_Name: CarPolice
   m_TagString: Player
@@ -826,19 +825,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &3658604329588754317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8477302400876698274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9476faa8a99c8840956d9beaed8f978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &8656102877813817640
 GameObject:
   m_ObjectHideFlags: 0

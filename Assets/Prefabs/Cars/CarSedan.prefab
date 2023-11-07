@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5027981026114865314}
   - component: {fileID: 7129716565451324603}
   - component: {fileID: 3951993666353922097}
-  - component: {fileID: 8759952398850782898}
   m_Layer: 0
   m_Name: CarSedan
   m_TagString: Player
@@ -157,19 +156,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &8759952398850782898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877275783713589321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9476faa8a99c8840956d9beaed8f978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1059537580241202974
 GameObject:
   m_ObjectHideFlags: 0

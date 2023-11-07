@@ -683,7 +683,6 @@ GameObject:
   - component: {fileID: 2399241373373317001}
   - component: {fileID: 6800550511963637426}
   - component: {fileID: 6658953255176940714}
-  - component: {fileID: 5128975993211289191}
   m_Layer: 0
   m_Name: CarMedium
   m_TagString: Player
@@ -825,16 +824,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &5128975993211289191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8580357408125045736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9476faa8a99c8840956d9beaed8f978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finalPosition: {x: 0, y: 0, z: 0}

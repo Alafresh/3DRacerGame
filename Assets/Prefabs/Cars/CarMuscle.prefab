@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3686697330112690027}
   - component: {fileID: 1240357939}
   - component: {fileID: 1240357940}
-  - component: {fileID: 147126192997425970}
   m_Layer: 0
   m_Name: CarMuscle
   m_TagString: Player
@@ -156,19 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   pickUpEffect: {fileID: 2604701888716089679, guid: 8c8a69152c6ff0e4fb30ab8ca8b5e29b, type: 3}
---- !u!114 &147126192997425970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3686697330112552263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9476faa8a99c8840956d9beaed8f978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &3686697330112554423
 GameObject:
   m_ObjectHideFlags: 0
